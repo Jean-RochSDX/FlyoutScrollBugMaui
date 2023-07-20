@@ -6,7 +6,8 @@
              Title="FlyoutMenuPage">
     <CollectionView x:Name="collectionView"
                     x:FieldModifier="public"
-                    SelectionMode="Single">
+                    SelectionMode="Single"
+                    BackgroundColor="Red">
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type local:FlyoutPageItem}">
                 <local:FlyoutPageItem Title="Contacts"

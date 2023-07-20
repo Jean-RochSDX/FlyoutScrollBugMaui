@@ -2,6 +2,8 @@ namespace FlyoutPageSample;
 
 public partial class AppFlyout : FlyoutPage
 {
+    public EventHandler DetailPageChanged { get; set; }
+
 	public AppFlyout()
 	{
 		InitializeComponent();
@@ -15,6 +17,7 @@ public partial class AppFlyout : FlyoutPage
         if (item != null)
         {
             Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
+            DetailPageChanged?.Invoke(this, EventArgs.Empty);
             if (FlyoutLayoutBehavior != FlyoutLayoutBehavior.Split)
             {
                 IsPresented = false;
